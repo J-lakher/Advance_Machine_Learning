@@ -1,0 +1,33 @@
+[System]
+Name='Optimized_Temperature_HeaterControl_FLC'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Temperature'
+Range=[15 30]
+NumMFs=3
+MF1='Low':'trimf',[15 15.8576134817575 19.9991419363642]
+MF2='Medium':'trimf',[18.7423275975323 24.6429285785162 26.1470389497034]
+MF3='High':'trimf',[24.7660274456944 30 30]
+
+[Output1]
+Name='HeaterPower'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'trimf',[0 11.6782354607772 25.1838923194121]
+MF2='Medium':'trimf',[25.9280110874503 52.8831761989288 70.6857887087685]
+MF3='High':'trimf',[60.9649983521126 80.667781547728 100]
+
+[Rules]
+1, 3 (1) : 1
+2, 2 (1) : 1
+3, 1 (1) : 1
