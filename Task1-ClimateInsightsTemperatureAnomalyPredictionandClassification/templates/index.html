@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </div>
+    <title>Climate Insights Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Climate Insights Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="year">Year:</label>
+        <input type="number" step="1" name="year" required><br><br>
+
+        <label for="co2_emissions">CO₂ Emissions (ppm):</label>
+        <input type="number" step="0.01" name="co2_emissions" required><br><br>
+
+        <label for="wind_speed">Wind Speed:</label>
+        <input type="number" step="0.01" name="wind_speed" required><br><br>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" step="0.01" name="humidity" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; Jagriti_Lakher Roll No: 240258
+    </div>
+</body>
+</html>

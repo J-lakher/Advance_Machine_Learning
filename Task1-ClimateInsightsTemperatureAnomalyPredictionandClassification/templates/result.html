@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <p><strong>Predicted Temperature (°C):</strong> {{ temp_prediction }}</p>
+    <p><strong>Sea Level Classification:</strong> {{ class_label }}</p>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
